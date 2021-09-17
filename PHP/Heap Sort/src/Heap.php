@@ -10,4 +10,9 @@ class Heap
     {
         return floor($i >> 1);
     }
+
+    public function left(int $i): int
+    {
+        return $i << 1;
+    }
 }
