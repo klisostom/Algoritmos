@@ -46,4 +46,19 @@ final class HeapTest extends TestCase
         $this->assertIsInt($actual->left($i), 'This result is not a integer number.');
         $this->assertEquals($expected, $actual->left($i));
     }
+
+    /** @test */
+    public function right_works(): void
+    {
+        # Arrange
+        $i = random_int(1, 10);
+        $expected = 2 * $i + 1;
+
+        # Act
+        $actual = new Heap;
+
+        # Assert
+        $this->assertIsInt($actual->right($i), 'This result is not a integer number.');
+        $this->assertEquals($expected, $actual->right($i));
+    }
 }
