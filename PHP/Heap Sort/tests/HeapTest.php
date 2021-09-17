@@ -31,4 +31,19 @@ final class HeapTest extends TestCase
         $this->assertIsFloat($actual->parent($i), 'This result is not a float number.');
         $this->assertEquals($floorValue, $actual->parent($i));
     }
+
+    /** @test */
+    public function left_works(): void
+    {
+        # Arrange
+        $i = random_int(1, 10);
+        $expected = 2 * $i;
+
+        # Act
+        $actual = new Heap;
+
+        # Assert
+        $this->assertIsInt($actual->left($i), 'This result is not a integer number.');
+        $this->assertEquals($expected, $actual->left($i));
+    }
 }
