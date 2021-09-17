@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace App;
 
@@ -22,7 +24,7 @@ final class InsertionSortTest extends TestCase
         $insertion = new InsertionSort();
         $array = [];
 
-        for ($i=0; $i < random_int(5, 15); $i++) {
+        for ($i = 0; $i < random_int(5, 15); $i++) {
             $array[] = $i;
         }
 
@@ -49,7 +51,7 @@ final class InsertionSortTest extends TestCase
         $insertion = new InsertionSort();
         $array = [];
 
-        for ($i = random_int(5, 15); $i >= 0 ; $i--) {
+        for ($i = random_int(5, 15); $i >= 0; $i--) {
             $array[] = $i;
         }
 
