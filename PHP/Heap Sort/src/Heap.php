@@ -15,4 +15,9 @@ class Heap
     {
         return $i << 1;
     }
+
+    public function right(int $i): int
+    {
+        return ($i << 1) + 1;
+    }
 }
