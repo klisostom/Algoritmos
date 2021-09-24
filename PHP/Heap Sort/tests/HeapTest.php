@@ -18,14 +18,14 @@ final class HeapTest extends TestCase
     }
 
     /** @test */
-    public function parent_works(): void
+    public function must_return_float_calculated_by_parent(): void
     {
         # Arrange
         $i = random_int(1, 10);
         $floorValue = floor($i / 2);
 
         # Act
-        $actual = new Heap();
+        $actual = new Heap;
 
         # Assert
         $this->assertIsFloat($actual->parent($i), 'This result is not a float number.');
@@ -33,7 +33,7 @@ final class HeapTest extends TestCase
     }
 
     /** @test */
-    public function left_works(): void
+    public function must_return_integer_calculated_by_left(): void
     {
         # Arrange
         $i = random_int(1, 10);
@@ -48,11 +48,11 @@ final class HeapTest extends TestCase
     }
 
     /** @test */
-    public function right_works(): void
+    public function must_return_integer_calculated_by_right(): void
     {
         # Arrange
         $i = random_int(1, 10);
-        $expected = 2 * $i + 1;
+        $expected = (2 * $i) + 1;
 
         # Act
         $actual = new Heap;
@@ -60,5 +60,21 @@ final class HeapTest extends TestCase
         # Assert
         $this->assertIsInt($actual->right($i), 'This result is not a integer number.');
         $this->assertEquals($expected, $actual->right($i));
+    }
+
+    /** @test */
+    public function max_heapify(): void
+    {
+        # Arrange
+        $actual = [16, 4, 10, 14, 7, 9, 3, 2, 8, 1];
+        $expected = [16, 14, 10, 8, 7, 9, 3, 2, 4, 1];
+        $index = 1;
+
+        # Act
+        $result = new Heap;
+        $result->maxHeapify($actual, $index);
+
+        # Assert
+        $this->assertEquals($expected, $actual);
     }
 }
